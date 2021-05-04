@@ -58,6 +58,12 @@ Donation.prototype.render = function () {
     firstRaw.appendChild(el3)
     el3.textContent = this.userAmount
 
+    // let lastRaw = document.createElement("tr")
+    // table.appendChild(lastRaw)
+    // let el0 = document.createElement('td')
+    // lastRaw.appendChild(el0)
+    // el0.textContent = 'total'
+
 
 
 }
@@ -67,9 +73,9 @@ function lastRow() {
     table.appendChild(lastRaw)
     let el0 = document.createElement('td')
     lastRaw.appendChild(el0)
-    el0.textContent = Donation.total += Donation.userAmount
+    el0.textContent = Donation.userAmount+=Donation.userAmount
 }
-// lastRow()
+
 
 const form = document.getElementById('theForm')
 form.addEventListener('submit', submitHandle)
@@ -80,6 +86,7 @@ function submitHandle(event) {
 
     let newDonar = new Donation(name, amount)
     newDonar.render()
+    lastRow()
 
 }
 function saveToLs() {
